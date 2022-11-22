@@ -1,0 +1,24 @@
+---
+
+- hosts: webservers
+ 
+  tasks:
+    - name: install tomcat
+      ansible.builtin.yum:
+        name:
+          - tomcat 
+          - tomcat-webapps
+          - tomcat-admin-webapps 
+          - tomcat-docs-webapp
+        state: present
+        
+    
+    - name: start and enable the tomcat service
+      ansible.builtin.service:
+        name: tomcat
+        state: started
+        enabled: yes
+
+
+
+...
