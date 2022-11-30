@@ -2,9 +2,15 @@
 
 - hosts: webservers
   become: true
+<<<<<<< HEAD
+
+  vars:
+    ansible_become_pass: "{{ jenkins_sudo_pass }}"
+=======
   
   vars:
     ansible_become_pass: jenkins
+>>>>>>> 4f55bbef2f78321fa8062a2fa0cd6f1d2fc4c74f
  
   tasks:
     - name: install tomcat
